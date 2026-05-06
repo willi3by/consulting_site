@@ -5,6 +5,7 @@
   data-netlify="true"
   netlify-honeypot="bot-field"
   class="card flex flex-col gap-4 p-8 md:flex-row md:items-center"
+  data-netlify-form
 >
   <input type="hidden" name="form-name" value="newsletter" />
   <input type="hidden" name="subject" value="New newsletter signup from Williamson Research Consulting" />
@@ -26,3 +27,25 @@
 
   <button class="btn-primary" type="submit">Subscribe</button>
 </form>
+
+<script>
+  document.querySelectorAll('form[data-netlify-form][name="newsletter"]').forEach((form) => {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formEl = event.currentTarget as HTMLFormElement;
+      const data = new URLSearchParams(new FormData(formEl) as any).toString();
+      try {
+        const response = await fetch('/__forms.html', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: data,
+        });
+        if (!response.ok) throw new Error(`Submission failed: ${response.status}`);
+        window.location.href = formEl.getAttribute('action') || '/thank-you';
+      } catch (err) {
+        console.error(err);
+        alert('Sorry, something went wrong subscribing. Please try again.');
+      }
+    });
+  });
+</script>

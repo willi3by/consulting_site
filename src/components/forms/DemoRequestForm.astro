@@ -5,6 +5,7 @@
   data-netlify="true"
   netlify-honeypot="bot-field"
   class="card grid gap-4 p-8"
+  data-netlify-form
 >
   <input type="hidden" name="form-name" value="consultation" />
   <input type="hidden" name="subject" value="New consultation request from Williamson Research Consulting" />
@@ -65,3 +66,25 @@
 
   <button class="btn-primary w-full md:w-fit" type="submit">Request consultation</button>
 </form>
+
+<script>
+  document.querySelectorAll('form[data-netlify-form][name="consultation"]').forEach((form) => {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formEl = event.currentTarget as HTMLFormElement;
+      const data = new URLSearchParams(new FormData(formEl) as any).toString();
+      try {
+        const response = await fetch('/__forms.html', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: data,
+        });
+        if (!response.ok) throw new Error(`Submission failed: ${response.status}`);
+        window.location.href = formEl.getAttribute('action') || '/thank-you';
+      } catch (err) {
+        console.error(err);
+        alert('Sorry, something went wrong sending your request. Please try again.');
+      }
+    });
+  });
+</script>
