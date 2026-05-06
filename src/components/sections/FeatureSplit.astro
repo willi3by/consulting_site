@@ -1,0 +1,76 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  body: string;
+  bullets?: string[];
+  reverse?: boolean;
+  imageSrc?: string;
+  imageAlt?: string;
+  imageFit?: 'cover' | 'contain';
+  imageCaption?: string;
+  imageBgClass?: string;
+}
+const {
+  eyebrow,
+  title,
+  body,
+  bullets = [],
+  reverse = false,
+  imageSrc,
+  imageAlt = '',
+  imageFit = 'contain',
+  imageCaption,
+  imageBgClass = 'bg-gradient-to-br from-blue-50 to-slate-100'
+} = Astro.props;
+---
+
+<section class="section">
+  <div class:list={[
+    'container-shell grid gap-10 lg:grid-cols-2 lg:items-center',
+    reverse && 'lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1'
+  ]}>
+    <div class="card p-5 md:p-6 lg:p-8">
+      <div class:list={[
+        'group relative overflow-hidden rounded-[2rem] border border-slate-200/80',
+        imageSrc ? 'min-h-[280px] bg-white shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]' : `aspect-[4/3] ${imageBgClass}`
+      ]}>
+        {imageSrc ? (
+          <>
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(96,165,250,0.12),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(168,85,247,0.10),transparent_42%)]"></div>
+            <div class="relative flex min-h-[280px] items-center justify-center p-4 md:min-h-[320px] md:p-6">
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                class:list={[
+                  'w-full rounded-[1.25rem] border border-slate-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)] transition duration-500 group-hover:scale-[1.015]',
+                  imageFit === 'contain'
+                    ? 'max-h-[330px] object-contain'
+                    : 'h-full min-h-[280px] object-cover'
+                ]}
+                loading="lazy"
+              />
+            </div>
+            {imageCaption && (
+              <div class="border-t border-slate-200/90 bg-slate-50/80 px-5 py-3 text-xs font-medium uppercase tracking-[0.16em] text-slate-500">
+                {imageCaption}
+              </div>
+            )}
+          </>
+        ) : null}
+      </div>
+    </div>
+    <div>
+      {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+      <h2 class="h2">{title}</h2>
+      <p class="mt-5 text-lg leading-8 text-slate-600">{body}</p>
+      {bullets.length > 0 && (
+        <ul class="mt-6 space-y-3 text-slate-700">
+          {bullets.map((bullet) => (
+            <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-blue-600"></span><span>{bullet}</span></li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </div>
+</section>

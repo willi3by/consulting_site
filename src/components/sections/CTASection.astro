@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href?: string;
+  label?: string;
+}
+const { title, body, href = '/demo', label = 'Start a consultation' } = Astro.props;
+---
+
+<section class="section">
+  <div class="container-shell">
+    <div class="card overflow-hidden bg-slate-950 p-10 text-white md:p-14">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2>
+        <p class="mt-5 text-lg leading-8 text-slate-300">{body}</p>
+        <a href={href} class="btn-secondary mt-8 bg-white text-slate-950 hover:bg-slate-100">{label}</a>
+      </div>
+    </div>
+  </div>
+</section>

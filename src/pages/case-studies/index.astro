@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import CaseStudyCard from '../../components/cards/CaseStudyCard.astro';
+
+const caseStudies = await getCollection('case-studies');
+---
+
+<PageLayout title="Representative Engagements" description="Representative consulting engagements and selected work." eyebrow="Selected work">
+  <section class="section pt-0">
+    <div class="container-shell">
+      <div class="mb-8 max-w-3xl">
+        <h2 class="h2">Representative engagements</h2>
+        <p class="mt-5 text-lg leading-8 text-slate-600">
+          These examples show the kinds of projects Williamson Analytics supports across imaging methods,
+          analytics, scientific writing, machine learning, and research operations.
+        </p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        {caseStudies.map((entry) => (
+          <CaseStudyCard
+            href={`/case-studies/${entry.id}/`}
+            title={entry.data.title}
+            clientType={entry.data.clientType}
+            problem={entry.data.problem}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,37 @@
+---
+interface Item {
+  title: string;
+  body: string;
+}
+interface Props {
+  eyebrow?: string;
+  title: string;
+  intro?: string;
+  items: Item[];
+}
+const { eyebrow, title, intro, items } = Astro.props;
+const accents = ['from-cyan-500 to-blue-600', 'from-fuchsia-500 to-violet-600', 'from-emerald-500 to-cyan-500'];
+---
+
+<section class="section bg-white/55">
+  <div class="container-shell">
+    {eyebrow && <div class="eyebrow-premium">{eyebrow}</div>}
+    <div class="section-heading-wrap">
+      <h2 class="h2 max-w-3xl">{title}</h2>
+      {intro && <p class="max-w-3xl text-lg leading-8 text-slate-600">{intro}</p>}
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {items.map((item, index) => (
+        <article class="feature-card-accent group relative overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-8 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+          <div class={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${accents[index % accents.length]} opacity-80`}></div>
+          <div class="flex items-center justify-between gap-4">
+            <div class="kicker-label">{String(index + 1).padStart(2, '0')}</div>
+            <span class={`inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-gradient-to-br ${accents[index % accents.length]} px-2 text-sm font-semibold text-white shadow-card`}>{index + 1}</span>
+          </div>
+          <h3 class="mt-4 text-[1.4rem] font-semibold leading-tight tracking-tight text-slate-950">{item.title}</h3>
+          <p class="mt-4 leading-7 text-slate-600">{item.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

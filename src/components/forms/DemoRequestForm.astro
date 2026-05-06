@@ -1,0 +1,39 @@
+<form method="post" action="/api/demo" class="card grid gap-4 p-8">
+  <div class="grid gap-4 md:grid-cols-2">
+    <input class="input" type="text" name="name" placeholder="Full name" required />
+    <input class="input" type="email" name="email" placeholder="Email" required />
+  </div>
+  <div class="grid gap-4 md:grid-cols-2">
+    <input class="input" type="text" name="organization" placeholder="Institution / company" />
+    <input class="input" type="text" name="role" placeholder="Role" />
+  </div>
+  <select class="input" name="serviceArea">
+    <option value="">Primary area of need</option>
+    <option>Neuroimaging / MRI</option>
+    <option>Machine learning / deep learning</option>
+    <option>Statistical modeling / analytics</option>
+    <option>Computational neuroscience / network science</option>
+    <option>Pipeline / QA-QC / infrastructure</option>
+    <option>Scientific writing / review / editing</option>
+    <option>IRB / protocol / research operations</option>
+    <option>Not sure yet</option>
+  </select>
+  <select class="input" name="projectStage">
+    <option value="">Project stage</option>
+    <option>Idea / planning</option>
+    <option>Grant development</option>
+    <option>Active study</option>
+    <option>Analysis / interpretation</option>
+    <option>Manuscript / revision</option>
+    <option>Infrastructure / workflow build</option>
+  </select>
+  <select class="input" name="timeline">
+    <option value="">Timeline</option>
+    <option>ASAP</option>
+    <option>Within 1 month</option>
+    <option>Within 1 quarter</option>
+    <option>Exploratory</option>
+  </select>
+  <textarea class="input min-h-36" name="goals" placeholder="Briefly describe the project, technical challenge, writing/editing need, or outcome you want." required></textarea>
+  <button class="btn-primary w-full md:w-fit" type="submit">Request consultation</button>
+</form>

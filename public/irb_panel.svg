@@ -1,0 +1,36 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="32" fill="#0B1530"/>
+  <rect x="80" y="80" width="1040" height="740" rx="28" fill="#F8FAFC"/>
+  <text x="120" y="150" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Protocol, Feasibility, and Operations</text>
+  <g>
+    <rect x="140" y="220" width="180" height="84" rx="22" fill="#DBEAFE" stroke="#93C5FD"/>
+    <text x="174" y="270" fill="#1E3A8A" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Study Aim</text>
+    <rect x="400" y="220" width="220" height="84" rx="22" fill="#E9D5FF" stroke="#C084FC"/>
+    <text x="438" y="270" fill="#6B21A8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Imaging Plan</text>
+    <rect x="700" y="220" width="180" height="84" rx="22" fill="#D1FAE5" stroke="#6EE7B7"/>
+    <text x="740" y="270" fill="#065F46" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">IRB Fit</text>
+    <rect x="940" y="220" width="120" height="84" rx="22" fill="#FDE68A" stroke="#FBBF24"/>
+    <text x="969" y="270" fill="#92400E" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Run</text>
+  </g>
+  <g stroke="#94A3B8" stroke-width="5">
+    <path d="M320 262H400"/>
+    <path d="M620 262H700"/>
+    <path d="M880 262H940"/>
+  </g>
+  <g>
+    <rect x="140" y="390" width="380" height="290" rx="24" fill="#EFF6FF" stroke="#BFDBFE"/>
+    <text x="175" y="445" fill="#1E293B" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Feasibility review</text>
+    <text x="175" y="492" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="22">• modality and scan burden</text>
+    <text x="175" y="532" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="22">• recruitment and workflow impact</text>
+    <text x="175" y="572" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="22">• methods language and approvals</text>
+    <text x="175" y="612" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="22">• multisite coordination considerations</text>
+  </g>
+  <g>
+    <rect x="580" y="390" width="480" height="290" rx="24" fill="#0F172A"/>
+    <text x="618" y="445" fill="#E2E8F0" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Operational alignment</text>
+    <rect x="620" y="492" width="360" height="14" rx="7" fill="#38BDF8"/>
+    <rect x="620" y="530" width="300" height="14" rx="7" fill="#A78BFA"/>
+    <rect x="620" y="568" width="340" height="14" rx="7" fill="#34D399"/>
+    <rect x="620" y="606" width="250" height="14" rx="7" fill="#F59E0B"/>
+  </g>
+</svg>

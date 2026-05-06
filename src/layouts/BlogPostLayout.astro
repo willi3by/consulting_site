@@ -1,0 +1,19 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { entry } = Astro.props;
+---
+
+<BaseLayout title={entry.data.seoTitle ?? entry.data.title} description={entry.data.seoDescription ?? entry.data.description}>
+  <article class="section">
+    <div class="container-shell max-w-4xl">
+      <div class="eyebrow">{entry.data.category}</div>
+      <h1 class="h1">{entry.data.title}</h1>
+      <p class="mt-6 text-sm text-slate-500">
+        {entry.data.author} · {entry.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </p>
+      <div class="prose prose-slate mt-10 max-w-none">
+        <slot />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

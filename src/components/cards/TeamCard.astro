@@ -1,0 +1,21 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  bio: string;
+  linkedin?: string;
+  email?: string;
+}
+const { name, role, bio, linkedin, email } = Astro.props;
+---
+
+<article class="card p-8">
+  <div class="mb-5 h-16 w-16 rounded-2xl bg-slate-100"></div>
+  <h3 class="text-xl font-semibold text-slate-950">{name}</h3>
+  <p class="mt-2 text-sm font-medium text-blue-700">{role}</p>
+  <p class="mt-4 leading-7 text-slate-600">{bio}</p>
+  <div class="mt-6 flex gap-4 text-sm">
+    {linkedin && <a href={linkedin} class="font-medium text-slate-700 hover:text-blue-700">LinkedIn</a>}
+    {email && <a href={`mailto:${email}`} class="font-medium text-slate-700 hover:text-blue-700">Email</a>}
+  </div>
+</article>
