@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import netlify from '@astrojs/netlify';
 
 export default defineConfig({
-  site: 'https://your-site-name.netlify.app',
+  site: 'https://lucent-pixie-3e104f.netlify.app/',
   output: 'server',
   adapter: netlify(),
   integrations: [tailwind(), sitemap()]
