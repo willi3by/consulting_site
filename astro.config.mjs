@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import netlify from '@astrojs/netlify';
 
 export default defineConfig({
-  site: 'https://williamson-analytics.netlify.app',,
+  site: 'https://williamson-analytics.netlify.app',
   output: 'server',
   adapter: netlify(),
   integrations: [tailwind(), sitemap()]
