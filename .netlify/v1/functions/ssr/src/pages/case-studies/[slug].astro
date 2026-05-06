@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('case-studies');
+  return caseStudies.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+
+<BaseLayout title={`${entry.data.title} | Case Study`} description={entry.data.problem}>
+  <section class="section">
+    <div class="container-shell max-w-4xl">
+      <div class="eyebrow">{entry.data.clientType}</div>
+      <h1 class="h1">{entry.data.title}</h1>
+      <div class="mt-10 grid gap-8">
+        <article class="card p-8">
+          <h2 class="text-2xl font-semibold text-slate-950">Problem</h2>
+          <p class="mt-4 leading-8 text-slate-600">{entry.data.problem}</p>
+        </article>
+        <article class="card p-8">
+          <h2 class="text-2xl font-semibold text-slate-950">Solution</h2>
+          <p class="mt-4 leading-8 text-slate-600">{entry.data.solution}</p>
+        </article>
+        <article class="card p-8">
+          <h2 class="text-2xl font-semibold text-slate-950">Outcomes</h2>
+          <ul class="mt-4 space-y-3 text-slate-600">
+            {entry.data.outcomes.map((outcome) => <li>• {outcome}</li>)}
+          </ul>
+          <a href={entry.data.ctaUrl} class="btn-primary mt-8">{entry.data.ctaLabel}</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

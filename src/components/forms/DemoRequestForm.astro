@@ -1,12 +1,31 @@
-<form method="post" action="/api/demo" class="card grid gap-4 p-8">
+<form
+  name="consultation"
+  method="POST"
+  action="/thank-you"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  class="card grid gap-4 p-8"
+>
+  <input type="hidden" name="form-name" value="consultation" />
+  <input type="hidden" name="subject" value="New consultation request from Williamson Research Consulting" />
+
+  <p class="hidden">
+    <label>
+      Don’t fill this out if you’re human:
+      <input name="bot-field" />
+    </label>
+  </p>
+
   <div class="grid gap-4 md:grid-cols-2">
     <input class="input" type="text" name="name" placeholder="Full name" required />
     <input class="input" type="email" name="email" placeholder="Email" required />
   </div>
+
   <div class="grid gap-4 md:grid-cols-2">
     <input class="input" type="text" name="organization" placeholder="Institution / company" />
     <input class="input" type="text" name="role" placeholder="Role" />
   </div>
+
   <select class="input" name="serviceArea">
     <option value="">Primary area of need</option>
     <option>Neuroimaging / MRI</option>
@@ -18,6 +37,7 @@
     <option>IRB / protocol / research operations</option>
     <option>Not sure yet</option>
   </select>
+
   <select class="input" name="projectStage">
     <option value="">Project stage</option>
     <option>Idea / planning</option>
@@ -27,6 +47,7 @@
     <option>Manuscript / revision</option>
     <option>Infrastructure / workflow build</option>
   </select>
+
   <select class="input" name="timeline">
     <option value="">Timeline</option>
     <option>ASAP</option>
@@ -34,6 +55,13 @@
     <option>Within 1 quarter</option>
     <option>Exploratory</option>
   </select>
-  <textarea class="input min-h-36" name="goals" placeholder="Briefly describe the project, technical challenge, writing/editing need, or outcome you want." required></textarea>
+
+  <textarea
+    class="input min-h-36"
+    name="goals"
+    placeholder="Briefly describe the project, technical challenge, writing/editing need, or outcome you want."
+    required
+  ></textarea>
+
   <button class="btn-primary w-full md:w-fit" type="submit">Request consultation</button>
 </form>

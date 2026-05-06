@@ -1,10 +1,30 @@
-<form method="post" action="/api/contact" class="card grid gap-4 p-8">
+<form
+  name="contact"
+  method="POST"
+  action="/thank-you"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  class="card grid gap-4 p-8"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="subject" value="New contact form submission from Williamson Research Consulting" />
+
+  <p class="hidden">
+    <label>
+      Don’t fill this out if you’re human:
+      <input name="bot-field" />
+    </label>
+  </p>
+
   <div class="grid gap-4 md:grid-cols-2">
     <input class="input" type="text" name="firstName" placeholder="First name" required />
     <input class="input" type="text" name="lastName" placeholder="Last name" required />
   </div>
+
   <input class="input" type="email" name="email" placeholder="Email" required />
+
   <input class="input" type="text" name="organization" placeholder="Institution / lab / company" />
+
   <select class="input" name="engagementType">
     <option value="">What kind of help do you need?</option>
     <option>Advisory / strategy</option>
@@ -14,6 +34,7 @@
     <option>Retained collaborative support</option>
     <option>Training / speaking</option>
   </select>
+
   <select class="input" name="projectStage">
     <option value="">Current stage</option>
     <option>Idea / planning</option>
@@ -23,6 +44,13 @@
     <option>Manuscript / revision</option>
     <option>Infrastructure / workflow build</option>
   </select>
-  <textarea class="input min-h-36" name="message" placeholder="What are you trying to accomplish, what is the bottleneck, and what kind of outcome would be most helpful?" required></textarea>
+
+  <textarea
+    class="input min-h-36"
+    name="message"
+    placeholder="What are you trying to accomplish, what is the bottleneck, and what kind of outcome would be most helpful?"
+    required
+  ></textarea>
+
   <button class="btn-primary w-full md:w-fit" type="submit">Send message</button>
 </form>
