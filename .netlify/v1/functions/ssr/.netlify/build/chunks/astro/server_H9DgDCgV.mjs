@@ -1981,6 +1981,20 @@ function normalizeProps(props) {
   return props;
 }
 
+async function renderScript(result, id) {
+  const inlined = result.inlinedScripts.get(id);
+  let content = "";
+  if (inlined != null) {
+    if (inlined) {
+      content = `<script type="module">${inlined}</script>`;
+    }
+  } else {
+    const resolved = await result.resolve(id);
+    content = `<script type="module" src="${result.userAssetsBase ? (result.base === "/" ? "" : result.base) + result.userAssetsBase : ""}${resolved}"></script>`;
+  }
+  return createRenderInstruction({ type: "script", id, content });
+}
+
 function renderScriptElement({ props, children }) {
   return renderElement("script", {
     props,
@@ -2018,4 +2032,4 @@ function spreadAttributes(values = {}, _name, { class: scopedClassName } = {}) {
   return markHTMLString(output);
 }
 
-export { AstroError as A, ExpectedImageOptions as E, Fragment as F, InvalidImageService as I, NOOP_MIDDLEWARE_HEADER as N, RenderUndefinedEntryError as R, UnknownContentCollectionError as U, createComponent as a, renderTemplate as b, createAstro as c, renderSlot as d, addAttribute as e, renderUniqueStylesheet as f, renderScriptElement as g, createHeadAndContent as h, renderHead as i, decodeKey as j, NoImageMetadata as k, FailedToFetchRemoteImageDimensions as l, maybeRenderHead as m, RemoteImageNotAllowed as n, ExpectedImage as o, ExpectedNotESMImage as p, ImageMissingAlt as q, renderComponent as r, spreadAttributes as s, toStyleString as t, unescapeHTML as u, ExperimentalFontsNotEnabled as v, FontFamilyNotFound as w };
+export { AstroError as A, ExpectedImageOptions as E, Fragment as F, InvalidImageService as I, NOOP_MIDDLEWARE_HEADER as N, RenderUndefinedEntryError as R, UnknownContentCollectionError as U, createComponent as a, renderTemplate as b, createAstro as c, renderSlot as d, addAttribute as e, renderScript as f, renderUniqueStylesheet as g, renderScriptElement as h, createHeadAndContent as i, renderHead as j, decodeKey as k, NoImageMetadata as l, maybeRenderHead as m, FailedToFetchRemoteImageDimensions as n, RemoteImageNotAllowed as o, ExpectedImage as p, ExpectedNotESMImage as q, renderComponent as r, ImageMissingAlt as s, toStyleString as t, unescapeHTML as u, spreadAttributes as v, ExperimentalFontsNotEnabled as w, FontFamilyNotFound as x };

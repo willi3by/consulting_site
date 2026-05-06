@@ -1,10 +1,10 @@
 /* empty css                                  */
-import { c as createAstro, a as createComponent, m as maybeRenderHead, b as renderTemplate, r as renderComponent } from '../chunks/astro/server_yXjxRbVI.mjs';
+import { c as createAstro, a as createComponent, m as maybeRenderHead, b as renderTemplate, f as renderScript, r as renderComponent } from '../chunks/astro/server_H9DgDCgV.mjs';
 import 'piccolore';
-import { $ as $$BaseLayout } from '../chunks/BaseLayout_CG41wOsC.mjs';
-import { $ as $$Hero } from '../chunks/Hero_BDEPh2qT.mjs';
+import { $ as $$BaseLayout } from '../chunks/BaseLayout_DNrds6Fa.mjs';
+import { $ as $$Hero } from '../chunks/Hero_Bb_Db31d.mjs';
 import 'clsx';
-import { $ as $$FeatureGrid, a as $$CTASection } from '../chunks/CTASection_DvAjgbJR.mjs';
+import { $ as $$FeatureGrid, a as $$CTASection } from '../chunks/CTASection_C6iz81Gz.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro$2 = createAstro("https://williamson-analytics.netlify.app");
@@ -31,10 +31,10 @@ const $$EngagementSteps = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<section class="section"> <div class="container-shell"> ${eyebrow && renderTemplate`<div class="eyebrow-premium">${eyebrow}</div>`} <h2 class="h2 max-w-3xl">${title}</h2> <div class="mt-10 grid gap-5 lg:grid-cols-4"> ${steps.map((step, idx) => renderTemplate`<article class="card-premium p-7"> <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-600/10 text-sm font-semibold text-blue-700">0${idx + 1}</div> <h3 class="mt-5 text-xl font-semibold text-slate-950">${step.title}</h3> <p class="mt-4 leading-7 text-slate-600">${step.body}</p> </article>`)} </div> </div> </section>`;
 }, "/Users/willi3by/Desktop/code/entourage-style-site/src/components/sections/EngagementSteps.astro", void 0);
 
-const $$NewsletterForm = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<form name="newsletter" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="card flex flex-col gap-4 p-8 md:flex-row md:items-center"> <input type="hidden" name="form-name" value="newsletter"> <input type="hidden" name="subject" value="New newsletter signup from Williamson Research Consulting"> <p class="hidden"> <label>
+const $$NewsletterForm = createComponent(async ($$result, $$props, $$slots) => {
+  return renderTemplate`${maybeRenderHead()}<form name="newsletter" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field" class="card flex flex-col gap-4 p-8 md:flex-row md:items-center" data-netlify-form> <input type="hidden" name="form-name" value="newsletter"> <input type="hidden" name="subject" value="New newsletter signup from Williamson Research Consulting"> <p class="hidden"> <label>
 Don’t fill this out if you’re human:
-<input name="bot-field"> </label> </p> <input class="input md:flex-1" type="email" name="email" placeholder="Enter your email for occasional updates" required> <button class="btn-primary" type="submit">Subscribe</button> </form>`;
+<input name="bot-field"> </label> </p> <input class="input md:flex-1" type="email" name="email" placeholder="Enter your email for occasional updates" required> <button class="btn-primary" type="submit">Subscribe</button> </form> ${renderScript($$result, "/Users/willi3by/Desktop/code/entourage-style-site/src/components/forms/NewsletterForm.astro?astro&type=script&index=0&lang.ts")}`;
 }, "/Users/willi3by/Desktop/code/entourage-style-site/src/components/forms/NewsletterForm.astro", void 0);
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {

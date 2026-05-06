@@ -1,7 +1,7 @@
 /* empty css                                  */
-import { a as createComponent, r as renderComponent, b as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_yXjxRbVI.mjs';
+import { a as createComponent, r as renderComponent, b as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_H9DgDCgV.mjs';
 import 'piccolore';
-import { $ as $$PageLayout } from '../chunks/PageLayout_UNgYtDwD.mjs';
+import { $ as $$PageLayout } from '../chunks/PageLayout_CHTBP2oC.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Pricing = createComponent(($$result, $$props, $$slots) => {

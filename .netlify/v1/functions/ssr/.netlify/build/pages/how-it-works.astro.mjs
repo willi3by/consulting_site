@@ -1,8 +1,8 @@
 /* empty css                                  */
-import { a as createComponent, r as renderComponent, b as renderTemplate } from '../chunks/astro/server_yXjxRbVI.mjs';
+import { a as createComponent, r as renderComponent, b as renderTemplate } from '../chunks/astro/server_H9DgDCgV.mjs';
 import 'piccolore';
-import { $ as $$PageLayout } from '../chunks/PageLayout_UNgYtDwD.mjs';
-import { $ as $$FeatureGrid, a as $$CTASection } from '../chunks/CTASection_DvAjgbJR.mjs';
+import { $ as $$PageLayout } from '../chunks/PageLayout_CHTBP2oC.mjs';
+import { $ as $$FeatureGrid, a as $$CTASection } from '../chunks/CTASection_C6iz81Gz.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$HowItWorks = createComponent(($$result, $$props, $$slots) => {

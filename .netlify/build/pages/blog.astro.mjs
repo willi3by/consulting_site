@@ -1,8 +1,8 @@
 /* empty css                                  */
-import { c as createAstro, a as createComponent, m as maybeRenderHead, e as addAttribute, b as renderTemplate, r as renderComponent } from '../chunks/astro/server_yXjxRbVI.mjs';
+import { c as createAstro, a as createComponent, m as maybeRenderHead, e as addAttribute, b as renderTemplate, r as renderComponent } from '../chunks/astro/server_H9DgDCgV.mjs';
 import 'piccolore';
-import { g as getCollection } from '../chunks/_astro_content_CYS6YNYr.mjs';
-import { $ as $$PageLayout } from '../chunks/PageLayout_UNgYtDwD.mjs';
+import { g as getCollection } from '../chunks/_astro_content__owumToC.mjs';
+import { $ as $$PageLayout } from '../chunks/PageLayout_CHTBP2oC.mjs';
 import 'clsx';
 export { renderers } from '../renderers.mjs';
 

@@ -1,8 +1,8 @@
 /* empty css                                     */
-import { c as createAstro, a as createComponent, r as renderComponent, b as renderTemplate, m as maybeRenderHead, e as addAttribute, d as renderSlot } from '../../chunks/astro/server_yXjxRbVI.mjs';
+import { c as createAstro, a as createComponent, r as renderComponent, b as renderTemplate, m as maybeRenderHead, e as addAttribute, d as renderSlot } from '../../chunks/astro/server_H9DgDCgV.mjs';
 import 'piccolore';
-import { r as renderEntry, g as getCollection } from '../../chunks/_astro_content_CYS6YNYr.mjs';
-import { $ as $$BaseLayout } from '../../chunks/BaseLayout_CG41wOsC.mjs';
+import { r as renderEntry, g as getCollection } from '../../chunks/_astro_content__owumToC.mjs';
+import { $ as $$BaseLayout } from '../../chunks/BaseLayout_DNrds6Fa.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro$1 = createAstro("https://williamson-analytics.netlify.app");

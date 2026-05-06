@@ -1,6 +1,6 @@
-import { c as createAstro, a as createComponent, r as renderComponent, b as renderTemplate, m as maybeRenderHead, d as renderSlot } from './astro/server_yXjxRbVI.mjs';
+import { c as createAstro, a as createComponent, r as renderComponent, b as renderTemplate, m as maybeRenderHead, d as renderSlot } from './astro/server_H9DgDCgV.mjs';
 import 'piccolore';
-import { $ as $$BaseLayout } from './BaseLayout_CG41wOsC.mjs';
+import { $ as $$BaseLayout } from './BaseLayout_DNrds6Fa.mjs';
 
 const $$Astro = createAstro("https://williamson-analytics.netlify.app");
 const $$PageLayout = createComponent(($$result, $$props, $$slots) => {
